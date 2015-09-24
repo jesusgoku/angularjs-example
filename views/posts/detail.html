@@ -1,0 +1,26 @@
+<div class="row" ng-view="post && user">
+  <div class="col-xs-12">
+    <h1 style="text-transform: uppercase;">{{ post.title }}</h1>
+
+    <hr>
+
+    <div class="well">
+      <p>{{ post.body }}</p>
+      <p>{{ post.body }}</p>
+      <p>{{ post.body }}</p>
+      <p>{{ post.body }}</p>
+      <p>{{ post.body }}</p>
+    </div>
+
+    <p><small>Created by: <a ui-sref="user_profile({ id: user.id })">{{ user.name }}</a></small></p>
+
+    <bs-panel title="Comments">
+      <div ng-repeat="item in comments" class="comment">
+        <h3><small>{{ item.name }}</small></h3>
+        <div>{{ item.body }}</div>
+        <p class="bg-info"><small>by: {{ item.email }}</small></p>
+        <hr>
+      </div>
+    </bs-panel>
+  </div>
+</div>

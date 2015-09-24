@@ -1,0 +1,59 @@
+<div class="row" ng-view="user">
+  <div class="col-xs-12">
+    <h1>{{ user.name }} <small>{{ user.username }}</small></h1>
+
+    <hr>
+
+    <div class="well">
+      <div class="row">
+        <div class="col-xs-4">
+          <bs-panel title="Address">
+              <dl>
+                <dt>Street</dt>
+                <dd>{{ user.address.street }}</dd>
+                <dt>Suite</dt>
+                <dd>{{ user.address.suite }}</dd>
+                <dt>City</dt>
+                <dd>{{ user.address.city }}</dd>
+                <dt>Zipcode</dt>
+                <dd>{{ user.address.zipcode }}</dd>
+              </dl>
+            </bs-panel>
+        </div>
+        <div class="col-xs-4">
+          <bs-panel title="Contact">
+            <dl>
+              <dt>Phone</dt>
+              <dd>{{ user.phone }}</dd>
+              <dt>Website</dt>
+              <dd>{{ user.website }}</dd>
+            </dl>
+            </bs-panel>
+        </div>
+        <div class="col-xs-4">
+          <bs-panel title="Company">
+            <dl>
+              <dt>Name</dt>
+              <dd>{{ user.company.name }}</dd>
+              <dt>Catch Phrase</dt>
+              <dd>{{ user.company.catchPhrase }}</dd>
+              <dt>BS</dt>
+              <dd>{{ user.company.bs }}</dd>
+            </dl>
+          </bs-panel>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <bs-panel title="User posts">
+            <div ng-repeat="item in posts">
+              <h3><a ui-sref="post_detail({ id: item.id })">{{ item.title }}</a><h3>
+              <hr>
+            </div>
+          </bs-panel>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
